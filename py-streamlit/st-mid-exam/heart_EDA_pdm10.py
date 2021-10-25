@@ -149,6 +149,6 @@ st.subheader('Strongly correlated or anti-correlated parameters')
 
 fig6 = plt.figure(figsize=(12, 10))
 hmap_params = st.multiselect("Select parameters to include on heatmap", options=list(df.columns),
-                             default=[p for p in df[['age', 'cp', 'thalach', 'exang', 'oldpeak', 'slope', 'ca', 'thal']] if "Outcome" not in p])
+                             default=[p for p in df[['age', 'cp', 'thalach', 'exang', 'oldpeak', 'slope', 'ca', 'thal']] if "target" not in p])
 sns.heatmap(df[hmap_params].corr(), annot=True, vmin=-1, vmax=1, cmap='coolwarm')
 st.pyplot(fig6)
